@@ -1,4 +1,4 @@
-# Advanced Building Blocks - Enumerable Methods
+# Ruby object Oriented Programming
 
 > In this project, I have  implemented my own version of Ruby's enumerable methods.
 
