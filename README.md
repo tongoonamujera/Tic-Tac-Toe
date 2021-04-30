@@ -12,7 +12,7 @@
 Clone
 
 ```git
-git clone https://github.com/tongoonamujera/enumerables.git
+git clone https://github.com/tongoonamujera/Tic-Tac-Toe.git
 ```
 
 To get a local copy up and running, follow these simple example steps.
