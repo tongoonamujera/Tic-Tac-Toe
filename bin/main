@@ -1,4 +1,3 @@
 #!/usr/bin/env ruby
-# rubocop:disable Metrics/BlockNesting
 
 puts 'Hello, world!'
