@@ -6,13 +6,13 @@ class Game
   def initialize
     @first_player = nil
     @second_player = nil
-    @players = {}
+    @game_players = { :o => "", :x => ""}
     @available_choices = Array(1..9)
     @game_ended = false
     @game_counter = 0
     @game_winner = "TON"
   end
-
+    
   def draw_game_board
     puts '+---+---+---+'
     puts "| #{@available_choices[0]} | #{@available_choices[1]} | #{@available_choices[2]} |"
@@ -24,15 +24,13 @@ class Game
   end
 
   def game_start_section
-    puts
     puts "Gamers welcome to Ruby_Tic_Tac_Toe Game, Please be prepared!"
-    puts 
     puts "Enter First Player's name: "
     @first_player = gets.chomp()
-    @game_players[O] = @first_player
+    @game_players[:o] = @first_player
     puts "Enter Second Player's name: "
     @second_player = gets.chomp()
-    @game_players[X] = @second_player
+    @game_players[:x] = @second_player
     sleep 3
     puts "#{@first_player} is O and #{@second_player} is X"
     sleep 3
@@ -61,11 +59,12 @@ class Game
       else
         player_choice = gets.chomp.to_i
         unless @available_choices.include?(player_choice)
-          @game_counter += 1
-          @available_choices[player_choice - 1] = @game_players.key(current_player)
+          puts "Invalid entry, #{current_player}! please try again... (your input must be a number between 1 and 9)"
           break
         else
-          puts "Invalid entry, #{current_player}! please try again... (your input must be a number between 1 and 9)"
+          @game_counter += 1
+          @game_counter <= 9
+          @available_choices[player_choice - 1] = @game_players.key(current_player)
         end
       end
     end
