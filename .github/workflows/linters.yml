@@ -19,6 +19,10 @@ jobs:
       - name: Rubocop Report
         run: rubocop --color
 
-AllCops:
-  Exclude:
-    - '../bin/main'
+#AllCops:
+#  Exclude:
+#    - '../bin/main'
+
+Layout/LineLength:
+  Max: 80
+  IgnoredPatterns: ['\A#']
