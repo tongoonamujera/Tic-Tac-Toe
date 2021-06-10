@@ -11,6 +11,8 @@ class Game
     @game_ended = false
     @game_counter = 0
     @game_winner = "TON"
+    @arr = []
+    @array = []
   end
     
   def draw_game_board
@@ -53,7 +55,7 @@ class Game
   def game_logic_section(current_player)
     loop do
       unless @game_counter < 9
-        @game_winner = current_player
+        @game_winner = check_winner
         @game_ended = true
         return nil
       else
@@ -65,19 +67,25 @@ class Game
           @game_counter += 1
           @game_counter <= 9
           @available_choices[player_choice - 1] = @game_players.key(current_player)
+          @arr.push(@available_choices[player_choice]) if current_player == @first_player
+          @array.push(@available_choices[player_choice]) if current_player == @second_player
         end
       end
     end
   end
 
+  def check_winner
+    unless @arr.size < @array.size
+      puts "#{@first_player} is the Winner!, Your score is #{@arr.size} / #{@available_choices.size} "
+    else
+      puts "#{@second_player} is the Winner!, Your score is #{@array.size} / #{@available_choices.size} "
+    end
+    
+  end
+
   def start_game
     game_start_section
     main_game_section until @game_ended
-    unless @game_winner == "TON"
-      puts "#{@game_winner} is winner! "
-    else
-      puts "TON is the winner"
-    end
     puts
     puts "Its game Over!"
   end
