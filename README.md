@@ -20,7 +20,7 @@ To get a local copy up and running, follow these simple example steps.
 
 1. Open a terminal window and enter `git clone https://github.com/tongoonamujera/Tic-Tac-Toe.git`
 2. Make your new cloned directory your active directory
-3. Currently, you are in the "main branch."
+3. Currently, you are in the "development branch."
 4. Change your current branch to Project-setup branch `git checkout Project-setup`
 
 ### Prerequisites

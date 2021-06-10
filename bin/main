@@ -23,6 +23,16 @@ class Game
     puts '+---+---+---+'
   end
 
+  def track_score_and_winner
+    @arr = []
+    @array = []
+    unless @arr.length < @array.length
+      puts "#{@first_player} is a winner your score is #{@arr.length} "
+    else
+      puts "#{second_player} is a winner. Your score is #{@arr.length}"
+    end
+  end
+
   def game_start_section
     puts "Gamers welcome to Ruby_Tic_Tac_Toe Game, Please be prepared!"
     puts "Enter First Player's name: "
@@ -53,7 +63,7 @@ class Game
   def game_logic_section(current_player)
     loop do
       unless @game_counter < 9
-        @game_winner = (@game_players.values.length > 4)
+        @game_winner = @game_players.all?(@available_choices[:o] < 4)
         @game_ended = true
         return nil
       else
