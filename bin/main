@@ -53,8 +53,7 @@ class Game
   def game_logic_section(current_player)
     loop do
       unless @game_counter < 9
-        score = @game_players.values.size
-        @game_winner = score
+        @game_winner = current_player
         @game_ended = true
         return nil
       else
