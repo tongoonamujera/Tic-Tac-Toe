@@ -6,7 +6,7 @@ class Game
   def initialize
     @first_player = nil
     @second_player = nil
-    @game_players = { :o => "", :x => ""}
+    @game_players = { :o => "", :x => "" }
     @available_choices = Array(1..9)
     @game_ended = false
     @game_counter = 0
@@ -28,17 +28,15 @@ class Game
   def game_start_section
     puts "Gamers welcome to Ruby_Tic_Tac_Toe Game, Please be prepared!"
     puts "Enter First Player's name: "
-    @first_player = gets.chomp()
+    @first_player = gets.chomp
     @game_players[:o] = @first_player
     puts "Enter Second Player's name: "
-    @second_player = gets.chomp()
+    @second_player = gets.chomp
     @game_players[:x] = @second_player
     sleep 3
-    puts "#{@first_player} is O and #{@second_player} is X"
+    puts "#{@first_player} is O and #{@second_player} is X \n\n"
     sleep 3
-    puts 
-    puts "Lets Start the Game!"
-    puts
+    puts "Lets Start the Game!\n\n"
     sleep 3
   end
 
@@ -46,9 +44,12 @@ class Game
     @game_players.values.each do |current_player|
       draw_game_board
       puts
-      puts "Hey #{current_player}!, it's your turn"
-      puts "Please select a cell available on the board"
-      game_logic_section(current_player)
+      if @game_counter < 9
+        puts "Hey #{current_player}!, it's your turn"
+        puts "Please select a cell available on the board"
+        game_logic_section(current_player)
+      end
+      
     end
   end
 
@@ -61,7 +62,7 @@ class Game
       else
         player_choice = gets.chomp.to_i
         unless @available_choices.include?(player_choice)
-          puts "Invalid entry, #{current_player}! please try again... (your input must be a number between 1 and 9)"
+          puts "Invalid entry, #{current_player}! please try again later... (your input must be a number between 1 and 9)"
           break
         else
           @game_counter += 1
@@ -89,7 +90,7 @@ class Game
     game_start_section
     main_game_section until @game_ended
     puts
-    puts "Its game Over!"
+    puts "Now the game Over!"
   end
 end
 
