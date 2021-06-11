@@ -33,11 +33,11 @@ class Game
     puts "Enter Second Player's name: "
     @second_player = gets.chomp
     @game_players[:x] = @second_player
-    sleep 3
+    sleep 1
     puts "#{@first_player} is O and #{@second_player} is X \n\n"
-    sleep 3
+    sleep 1
     puts "Lets Start the Game!\n\n"
-    sleep 3
+    sleep 1
   end
 
   def main_game_section
@@ -90,7 +90,7 @@ class Game
     game_start_section
     main_game_section until @game_ended
     puts
-    puts "Now the game Over!"
+    puts "Now the game is Over!"
   end
 end
 
