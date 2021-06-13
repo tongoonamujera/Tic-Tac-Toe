@@ -1,19 +1,7 @@
 # Ruby object Oriented Programming
 
-> In this project, I have  implemented my own version of Ruby's enumerable methods.
+> In this project, we were requested  build a Tic Tac Toe game. The main goal is to put into practice the main concepts of Object Oriented Programming. Particularly, classes and access to their attributes. In the This milestone we were only requested to create two folders that are lib( for the game logic) and bin(with the [executable file]called “main.rb”)
 
-Covered methods
-
-- #my_each
-- #my_each_with_index
-- #my_select
-- #my_all?
-- #my_any?
-- #my_none?
-- #my_count
-- #my_map
-- #my_inject
-- #multiply_els which multiplies all the elements of the array together by using #my_inject, e.g. multiply_els([2,4,5]) #=> 40
 
 ## Built With
 
@@ -24,18 +12,16 @@ Covered methods
 Clone
 
 ```git
-git clone https://github.com/tongoonamujera/enumerables.git
+git clone https://github.com/tongoonamujera/Tic-Tac-Toe.git
 ```
 
 To get a local copy up and running, follow these simple example steps.
 
 
-1. Open a terminal window and enter `git clone https://github.com/tongoonamujera/enumerables.git`
+1. Open a terminal window and enter `git clone https://github.com/tongoonamujera/Tic-Tac-Toe.git`
 2. Make your new cloned directory your active directory
-3. Currently, you are in the "development branch."
-4. Change your current branch to enumerables branch `git checkout enumerables`
-5. Use `irb` to test folder with following console command `irb -I . -r enumerable.rb`
-6. Once you are in the irb console, use the syntax to invoke the method stated below
+3. Currently, you are in the "main branch."
+4. Change your current branch to Project-setup branch `git checkout Project-setup`
 
 ### Prerequisites
 
@@ -44,70 +30,6 @@ Ruby installed localy
 ### Usage
 
 Use IRB to test the code
-#### my_select
-
-```irb
-[1,2,3,4,5,6].my_select(&:even?)
-=> [2,4,6]
-```
-
-#### my_all?
-
-```irb
-[1,2,3,4,5,6].my_all?(&:even?)
-=> false
-```
-
-#### my_any?
-
-```irb
-[1,2,3,4,5,6].my_any?(&:odd?)
-=> true
-```
-
-#### #my_none?
-
-```irb
-[1,2,3,4,5,6].my_none?(&:odd?)
-=> true
-```
-
-#### #my_count
-
-```irb
-[1,2,3].my_count
-=> 3
-[1,2,3].my_count { |x| x > 1}
-=> 2
-```
-
-#### #my_map
-
-```irb
-[1,5].my_map { |x| x * 2 }
-=> [2, 10]
-
-[1,2,3,4,5].my_map Proc.new { |x| x * 4 }
-=> [4,8,12,16,20]
-```
-
-#### #my_inject
-
-```irb
-Array(5..10).my_inject(:+)
-=> 45
-Array(5..10).my_inject { |sum, n| sum + n }
-=> 45
-```
-
-#### #multiply_els
-
-```irb
-arr = [1,2,4,5,6]
-multiply_els(arr)
-=> 240
-```
-
 
 ## Authors
 👤 **Tongoona Mujera**
