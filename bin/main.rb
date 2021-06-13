@@ -57,7 +57,7 @@ class Game
       unless @arr.size + @array.size == 9
         player_choice = gets.chomp.to_i
         unless @available_choices.include?(player_choice)
-          puts "Invalid entry, #{current_player}! please try again... (your input must be a number between 1 and 9)"
+          puts "Invalid entry, #{current_player}! please try again... (your input must be a number between 1 and 9 & must exist on the board)"
         else
           @available_choices[player_choice - 1] = @game_players.key(current_player)
           @arr.push(@available_choices[player_choice]) if current_player == @first_player
