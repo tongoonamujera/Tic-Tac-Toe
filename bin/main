@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 
+require_relative "../lib/game_helper.rb"
+include Player_helper
 class Game
   attr_accessor :first_player, :second_player, :game_players
 
   def initialize
-    @first_player = nil
-    @second_player = nil
+    @first_player = Player.new
+    @second_player = Player.new
     @game_players = { :o => "", :x => "" }
     @available_choices = Array(1..9)
     @game_ended = false
@@ -33,7 +35,7 @@ class Game
     puts "Enter Second Player's name: "
     @second_player = gets.chomp
     @game_players[:x] = @second_player
-    sleep 1
+      sleep 1
     puts "#{@first_player} is O and #{@second_player} is X \n\n"
     sleep 1
     puts "Lets Start the Game!\n\n"
