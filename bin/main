@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/game_helper.rb"
-include Player_helper
+require_relative "../lib/game_player_helper.rb"
 class Game
   attr_accessor :first_player, :second_player, :game_players
 
+  include Player_helper
   def initialize
-    @first_player = Player.new
-    @second_player = Player.new
+    @first_player = Player_checks.new
+    @second_player = Player_checks.new
     @game_players = { :o => "", :x => "" }
     @available_choices = Array(1..9)
     @game_ended = false
@@ -30,8 +30,8 @@ class Game
   def game_start_section
     puts "\u{1F44B} Gamers welcome to Ruby_Tic_Tac_Toe Game, Please be prepared!"
     puts "Enter First Player's name: "
-    @first_player = gets.chomp
-    @game_players[:o] = @first_player
+    @first_player.name = gets.chomp
+    @game_players[:o] = @first_player 
     puts "Enter Second Player's name: "
     @second_player = gets.chomp
     @game_players[:x] = @second_player
