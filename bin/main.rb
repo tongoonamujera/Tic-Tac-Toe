@@ -37,7 +37,6 @@ def check_name_validity?(name)
     puts "Wrong name characters (characters must not contain numbers and must be between 2 and 12)"
     name = gets.chomp.upcase
   else
-    true
     name
   end
 end
