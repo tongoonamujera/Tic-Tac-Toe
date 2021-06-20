@@ -15,36 +15,40 @@ def draw_game_board(available_choices)
   puts '+---+---+---+'
 end
 
-def check_vowels(strin)
-  counter = 0
-  vowels = %w(a e i o u)
-  str_chars = strin.chars
-  str_chars.each do |char|
-    vowels.each do |vowel|
-      if char == vowel
-        @counter += 1
-      end
-    end
-  end
-  counter
-  true if counter >= 1
-end
+# def check_vowels(strin)
+#   counter = 0
+#   vowels = %w(a e i o u)
+#   str_chars = strin.chars
+#   str_chars.each do |char|
+#     vowels.each do |vowel|
+#       if char == vowel.upcase
+#         counter += 1
+#       else
+#         puts 'no vowel'
+#       end
+#       counter
+#     end
+#   end
+#   true if counter >= 1
+# end
 
 def check_name_validity?(name)
-  unless  (name.size > 2 && name.size < 12) && name.match(/^[a-z]+$/i) && check_vowels(name)
+  unless  (name.size > 2 && name.size < 12) && name.match(/^[a-z]+$/i) #&& check_vowels(name)
     puts "Wrong name characters (characters must not contain numbers and must be between 2 and 12)"
     name = gets.chomp.upcase
+  else
+    true
+    name
   end
-  name
 end
 
 def game_players
   puts 'Hey first player!, please enter your name: '
   first_player = gets.chomp.upcase
-  first_player = check_name_validity?(first_player)
+  first_player until check_name_validity?(first_player) 
   puts 'Hey second player!, please enter your name: '
   second_player = gets.chomp.upcase
-  second_player = check_name_validity?(second_player)
+  second_player until check_name_validity?(second_player) 
   [first_player, second_player]
 end
 
