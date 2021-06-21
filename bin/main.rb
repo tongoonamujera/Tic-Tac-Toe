@@ -3,7 +3,7 @@
 require_relative '../lib/game_player_helper'
 require_relative '../lib/game_board.rb'
 
-puts "\u{1F44B} Gamers welcome to Ruby Tic_Tac_Toe Game, Please be prepared!"
+puts "\u{1F44B} Hello Gamers welcome to:"
 
 def draw_game_board(available_choices)
   puts '+---+---+---+'
@@ -16,12 +16,12 @@ def draw_game_board(available_choices)
 end
 
 def welcome
-  puts '+--+--+--+  +--+     ====                                                         '
-  puts '+--+--+--+  +--+   //                                                             '
-  puts "   |  |     |  |  ||    _____                                                           "
-  puts '   +--+     |  |  ||   |_____|                                                        '
-  puts "   |  |     |  |   \\                                                            "
-  puts '   +--+     +--+     ====                                                             '
+  puts ' ________    __      _____    ________     __        _____   ________   ____    _______                           '
+  puts '|________|  |  |   / _____|  |________|  / /\ \     /_____| |________| /    \  ||                                    '
+  puts "   |  |     |  |  ||            |  |    / /_'      ||          |  |   ||    || ||______      "
+  puts '   |  |     |  |  ||            |  |   / /____\ \  ||          |  |   ||    || ||______|      '
+  puts "   |  |     |  |  ||______      |  |  / /          ||_____     |  |   ||    || ||                 "
+  puts '   |__|     |__|   \ _____|     |__| /_/        \_\ \_____|    |__|    \____/  ||______                      '
 end
 
 def check_name_validity?(name)
@@ -62,6 +62,7 @@ def places_validation(choice, score_board)
 end
 
 loop do
+  puts welcome
   game_board = Game_board.new
   first_player_name, second_player_name = game_players
   first_player = Player_checks.new(first_player_name, "O")
@@ -86,8 +87,8 @@ loop do
       puts "'Celebrate!' #{current_player.name}, You won the game! \n"
       break
     elsif game_board.draw?
-      display_board(game_board.available_choices)
-      puts "Tie game! — Game over \n"
+      draw_game_board(game_board.available_choices)
+      puts "Its A Tie game! — Game over \n"
       break
     end
     draw_game_board(game_board.available_choices)
@@ -95,4 +96,3 @@ loop do
   end
   break
 end
-puts welcome
