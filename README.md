@@ -8,7 +8,7 @@
 - Player 2 will be assigned the X symbol.
 - Players take turn to place their symbols on the board.
 - The grid is numbered from 1 to 9.
-![Screenshot from 2021-06-22 08-56-55](https://user-images.githubusercontent.com/69446259/122899324-05032700-d34c-11eb-944e-9125e812768a.png)
+- ![Screenshot from 2021-06-22 08-56-55](https://user-images.githubusercontent.com/69446259/122899324-05032700-d34c-11eb-944e-9125e812768a.png)
 - You place the symbol by choosing the cell number.
 - The First Player to get 3 of her symbols in a row (up, down, across, or diagonally) wins the game.
 - When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
