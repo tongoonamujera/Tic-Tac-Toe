@@ -84,7 +84,7 @@ loop do
 
     if game_board.winner?
       draw_game_board(game_board.available_choices)
-      puts "'Celebrate!' #{current_player.name}, You won the game! \n"
+      puts "Hey! #{current_player.name}, You won the game! \n"
       break
     elsif game_board.draw?
       draw_game_board(game_board.available_choices)

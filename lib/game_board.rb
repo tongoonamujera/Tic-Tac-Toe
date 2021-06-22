@@ -26,6 +26,10 @@ class Game_board
   end
 
   def update_game_board(current_player, choice, first_player, second_player)
-    @available_choices[choice - 1] = first_player ? first_player.player_symbol : second_player.player_symbol
+    if current_player == first_player
+      @available_choices[choice - 1] = first_player.player_symbol
+    else
+      @available_choices[choice - 1] = second_player.player_symbol
+    end
   end
 end
