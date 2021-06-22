@@ -4,8 +4,8 @@
 ### TIC TAC TOE GAME INSTRUCTIONS
 - Tic Tac Toe is board game played on a board with a 3 squared by 3 squared grid.
 - The players are assigned their own symbols to place on the board cells
-- Player 1 will be assigned the X symbol.
-- Player 2 will be assigned the O symbol.
+- Player 1 will be assigned the O symbol.
+- Player 2 will be assigned the X symbol.
 - Players take turn to place their symbols on the board.
 - The grid is numbered from 1 to 9.
 
