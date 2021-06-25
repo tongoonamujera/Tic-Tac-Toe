@@ -1,5 +1,5 @@
 class Game_board
-  attr_accessor :available_choices, :winning_outcomes
+  attr_accessor :available_choices
 
   def initialize()
     @available_choices = Array(1..9)
