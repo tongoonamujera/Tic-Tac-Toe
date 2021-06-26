@@ -32,7 +32,7 @@ To get a local copy up and running, follow these simple example steps.
 2. Make your new cloned directory your active directory
 3. Currently, you are in the "development branch."
 4. Change your current branch game_readme_instructions branch `git checkout game_readme_instructions` in your terminal
-5.Change directory to bin by typing `cd bin` in your terminal
+5. Change directory to bin by typing `cd bin` in your terminal
 6. Then enter `ruby main.rb` in your terminal to start playing the game
 
 ### Prerequisites
